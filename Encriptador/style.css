@@ -116,6 +116,6 @@ body {
 
 .no-mensaje-img, .no-mensaje, .parrafo {
     position: relative;
-    top: 25%;
+    top: 20%;
+    visibility: visible;
 }
-  
