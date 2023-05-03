@@ -35,8 +35,31 @@ body {
   
 .buttons { 
     grid-area: buttons; 
+    display: grid; 
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
+    gap:0px 0px;
+    grid-template-areas:
+      "restriction"
+      "actions";
+    margin: 20px 20px;
+}
+
+.restriction {
+    grid-area: restriction;
+    text-align: center;
+}
+
+.restriction-text, .restriction-icon {
     display: inline-block;
+    color: #343434;
+}
+
+.actions {
+    grid-area: actions;
     text-align: center; 
+    height: fit-content;
+    margin-bottom: 0px;
 }
 
 .button-encriptar {
@@ -67,7 +90,7 @@ body {
     text-align: center;
     background: white;
     border-radius: 20px;
-    height: 558px;
+    height: auto;
     padding: 20px;
 }
 
