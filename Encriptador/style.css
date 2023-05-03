@@ -2,10 +2,6 @@ body {
     background: #f3f5fc;
 }
 
-.logo {
-    
-}
-
 .container {  
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -16,22 +12,67 @@ body {
       "logo logo result"
       "text text result"
       "buttons buttons result";
+    margin: 20px 20px;
   }
     
 .logo { 
     grid-area: logo; 
-    padding: 2em 2em;
+    padding-left: 20px;
 }
   
 .text { 
     grid-area: text; 
+    padding: 1em 0 1em 8em;
+}
+
+.input-text {
+    border: none;
+    outline: none;
+    overflow: auto;
+    background: transparent;
+    resize: none;
 }
   
 .buttons { 
     grid-area: buttons; 
+    display: inline-block;
+    text-align: center; 
+}
+
+.button-encriptar {
+    margin: 1em 2em;
+    border-radius: 11px;
+    border: none;
+    background: #343434;
+    width: 164px;
+    height: 34px;
+    color: #f3f5fc;
+}
+
+.button-desencriptar {
+    margin: 1em 2em;
+    border-radius: 11px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #343434;
+    background: #D8DFE8;
+    width: 164px;
+    height: 34px;
+    color: #343434;
 }
 
 .result { 
     grid-area: result; 
+    display: block;
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    height: 558px;
+    padding: 20px;
+}
+
+.no-mensaje-img, .no-mensaje, .parrafo {
+    position: relative;
+    top: 25%;
 }
   
