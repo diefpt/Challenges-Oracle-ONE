@@ -89,7 +89,6 @@ body {
     margin: 1em 2em;
     border-radius: 11px;
     border: none;
-    border-color: #343434;
     background: #FFC300;
     width: 164px;
     height: 34px;
@@ -114,8 +113,31 @@ body {
     padding: 20px;
 }
 
-.no-mensaje-img, .no-mensaje, .parrafo {
+#error {
     position: relative;
-    top: 20%;
     visibility: visible;
+}
+
+#success {
+    margin: 1em 1em;
+    position: relative;
+    visibility: hidden;
+    height: auto;
+}
+
+.button-copiar {
+    border-radius: 10px;
+    border: none;
+    background: #f3f5fc;
+    width: 120px;
+    height: 34px;
+    color: #343434;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.button-copiar:hover {
+    background: #343434;
+    color: #f3f5fc;
+    transform: scale(1.01);
 }

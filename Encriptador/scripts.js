@@ -1,22 +1,23 @@
 const text = document.querySelector('#text');
+
 const encriptar = document.querySelector('#encriptar');
 const desencriptar = document.querySelector('#desencriptar');
-const resultado = document.querySelector('#parrafo-display');
 
-const errorImg = document.querySelector('.no-mensaje-img');
-const errorMsj = document.querySelector('.no-mensaje');
+const resultado = document.querySelector('#parrafo-display');
+const success = document.querySelector('#success');
+const error = document.querySelector('#error');
+
+const copyText = document.querySelector('#copiar');
 
 const CLAVE = {a: 'ai', e: 'enter', i: 'imes', o: 'ober', u: 'ufat',};
 
 const cipher = msj => {
     if(!msj) {
-        errorImg.style.visibility = 'visible';
-        errorMsj.style.visibility = 'visible';
-        resultado.style.top = '20%';
+        error.style.visibility = 'visible';
+        success.style.visibility = 'hidden';
     } else {
-        errorImg.style.visibility = 'hidden';
-        errorMsj.style.visibility = 'hidden';
-        resultado.style.top = '-45%';
+        success.style.visibility = 'visible';
+        error.style.visibility = 'hidden';
     }
 
     resultado.innerHTML = msj ? msj.replace(/[a-z]/g, char => CLAVE.hasOwnProperty(char) ? CLAVE[char] : char) : 'Ingresa el texto que desees encriptar o desencriptar';
@@ -24,13 +25,11 @@ const cipher = msj => {
 
 const deCipher = msj => {
     if(!msj) {
-        errorImg.style.visibility = 'visible';
-        errorMsj.style.visibility = 'visible';
-        resultado.style.top = '20%';
+        error.style.visibility = 'visible';
+        success.style.visibility = 'hidden';
     } else {
-        errorImg.style.visibility = 'hidden';
-        errorMsj.style.visibility = 'hidden';
-        resultado.style.top = '-45%';
+        success.style.visibility = 'visible';
+        error.style.visibility = 'hidden';
     }
 
     resultado.innerHTML = msj ?  msj.replaceAll('ai', 'a')
