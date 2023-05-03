@@ -10,9 +10,9 @@ body {
     gap:20px 20px;
     grid-auto-flow: row;
     grid-template-areas:
-      "logo logo result"
-      "text text result"
-      "buttons buttons result";
+      "logo    result"
+      "text    result"
+      "buttons result";
     margin: 20px 20px;
   }
     
