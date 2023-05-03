@@ -1,11 +1,12 @@
 body {
     background: #f3f5fc;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .container {  
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 2.1fr 0.6fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 0.3fr 2.2fr 0.5fr;
     gap:20px 20px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -22,7 +23,9 @@ body {
   
 .text { 
     grid-area: text; 
-    padding: 1em 0 1em 8em;
+    height: 375px;
+    padding: 1em 1em;
+    text-align: center;
 }
 
 .input-text {
@@ -31,6 +34,9 @@ body {
     overflow: auto;
     background: transparent;
     resize: none;
+    font-size: 1.5em;
+    width: 80%;
+    height: 100%;
 }
   
 .buttons { 
@@ -42,7 +48,6 @@ body {
     grid-template-areas:
       "restriction"
       "actions";
-    margin: 20px 20px;
 }
 
 .restriction {
@@ -53,13 +58,13 @@ body {
 .restriction-text, .restriction-icon {
     display: inline-block;
     color: #343434;
+    font-size: 0.7em;
 }
 
 .actions {
     grid-area: actions;
     text-align: center; 
     height: fit-content;
-    margin-bottom: 0px;
 }
 
 .button-encriptar {
@@ -70,18 +75,33 @@ body {
     width: 164px;
     height: 34px;
     color: #f3f5fc;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.button-encriptar:hover {
+    background: #FFC300;
+    color: #343434;
+    transform: scale(1.01);
 }
 
 .button-desencriptar {
     margin: 1em 2em;
     border-radius: 11px;
-    border-width: 1px;
-    border-style: solid;
+    border: none;
     border-color: #343434;
-    background: #D8DFE8;
+    background: #FFC300;
     width: 164px;
     height: 34px;
     color: #343434;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.button-desencriptar:hover {
+    background: #343434;
+    color: #f3f5fc;
+    transform: scale(1.01);
 }
 
 .result { 
