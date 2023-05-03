@@ -1,29 +1,26 @@
-const textp = document.getElementById('text');
-const encriptar = document.getElementById('encriptar');
-const desencriptar = document.getElementById('desencriptar');
-const resultado = document.getElementById('parrafo-display');
+const text = document.querySelector('#text');
+const encriptar = document.querySelector('#encriptar');
+const desencriptar = document.querySelector('#desencriptar');
+const resultado = document.querySelector('#parrafo-display');
 
-const rotate = text => {
-    const a = 'a'.charCodeAt(0),
-          A = 'A'.charCodeAt(0),
-          key = 13;
-    resultado.innerHTML = text.replace(/[a-z]/g, char => String.fromCharCode(a + (char.charCodeAt(0) - a + key) % 26))
-               .replace(/[A-Z]/g, char => String.fromCharCode(A + (char.charCodeAt(0) - A + key) % 26));
+const CLAVE = {a: 'ai', e: 'enter', i: 'imes', o: 'ober', u: 'ufat',};
+
+const cipher = msj => {
+    resultado.innerHTML = msj.replace(/[a-z]/g, char => CLAVE.hasOwnProperty(char) ? CLAVE[char] : char);
+}    
+
+const deCipher = msj => {
+    resultado.innerHTML = msj.replaceAll('ai', 'a')
+                             .replaceAll('enter', 'e')
+                             .replaceAll('imes', 'i')
+                             .replaceAll('ober', 'o')
+                             .replaceAll('ufat', 'u');
 }
-
-const deRotate = text => {
-    const a = 'a'.charCodeAt(0),
-          A = 'A'.charCodeAt(0),
-          key = 13;
-    resultado.innerHTML = text.replace(/[a-z]/g, char => String.fromCharCode(a + (char.charCodeAt(0) - a + key) % 26))
-               .replace(/[A-Z]/g, char => String.fromCharCode(A + (char.charCodeAt(0) - A + key) % 26));
-}
-
 
 encriptar.addEventListener('click', () => {
-    rotate(textp.value);
+    cipher(text.value);
 });
 
 desencriptar.addEventListener('click', () => {
-    deRotate(textp.value);
+    deCipher(text.value);
 })
