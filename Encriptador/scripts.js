@@ -2,36 +2,25 @@ const text = document.querySelector('#text');
 const encriptar = document.querySelector('#encriptar');
 const desencriptar = document.querySelector('#desencriptar');
 const resultado = document.querySelector('#parrafo-display');
-const success = document.querySelector('#success');
-const error = document.querySelector('#error');
 const copy = document.querySelector('#copiar');
 const CLAVE = {a: 'ai', e: 'enter', i: 'imes', o: 'ober', u: 'ufat',};
-
-const messageDisplay = msj => {
-    if(!msj) {
-        error.style.visibility = 'visible';
-        success.style.visibility = 'hidden';
-    } else {
-        success.style.visibility = 'visible';
-        error.style.visibility = 'hidden';
-    }
-}
+const errorMsj = '<br><br><br><br><br><a href="https://shorturl.at/mvY09"><img src="imagenes/5203299.jpg" class="no-mensaje-img" width="250px" alt="Imagen de storyset en Freepik"></a><h3>Ningún mensaje fue encontrado</h3><p>Ingresa el texto que desees encriptar o desencriptar</p>'
 
 const cipher = msj => {
-    messageDisplay(msj);
+    copy.style.visibility = msj ? 'visible' : 'hidden';
     resultado.innerHTML = msj ? 
-    msj.replace(/[a-z]/g, char => CLAVE.hasOwnProperty(char) ? CLAVE[char] : char) : 
-    'Ingresa el texto que desees encriptar o desencriptar';
+    msj.replace(/[a-z]/gi, char => CLAVE.hasOwnProperty(char) ? CLAVE[char] : char) : 
+    errorMsj;
 }    
 
 const deCipher = msj => {
-    messageDisplay(msj);
+    copy.style.visibility = msj ? 'visible' : 'hidden';
     resultado.innerHTML = msj ?  msj.replaceAll('ai', 'a')
                              .replaceAll('enter', 'e')
                              .replaceAll('imes', 'i')
                              .replaceAll('ober', 'o')
                              .replaceAll('ufat', 'u') :
-    'Ingresa el texto que desees encriptar o desencriptar';
+    errorMsj;
 }
 
 encriptar.addEventListener('click', () => {cipher(text.value);});

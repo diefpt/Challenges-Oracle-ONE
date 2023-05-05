@@ -76,7 +76,6 @@ body {
     height: 34px;
     color: #f3f5fc;
     cursor: pointer;
-    transition: 0.2s all;
 }
 
 .button-encriptar:hover {
@@ -94,7 +93,6 @@ body {
     height: 34px;
     color: #343434;
     cursor: pointer;
-    transition: 0.2s all;
 }
 
 .button-desencriptar:hover {
@@ -105,35 +103,37 @@ body {
 
 .result { 
     grid-area: result; 
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.8fr 0.2fr;
+    gap: 20px 0px;
+    grid-template-areas: 
+      "parrafo"
+      "copy";
     text-align: center;
     background: white;
     border-radius: 20px;
-    height: auto;
+    height: 555px;
     padding: 20px;
 }
 
-#error {
-    position: relative;
-    visibility: visible;
-}
-
-#success {
-    margin: 1em 1em;
-    position: relative;
-    visibility: hidden;
-    height: auto;
+.display-text {
+    overflow: auto;
+    height: 100%;
+    resize: none;
+    color: #343434;
 }
 
 .button-copiar {
     border-radius: 10px;
     border: none;
+    outline: none;
     background: #f3f5fc;
     width: 120px;
     height: 34px;
     color: #343434;
     cursor: pointer;
-    transition: 0.2s all;
+    visibility: hidden;
 }
 
 .button-copiar:hover {
