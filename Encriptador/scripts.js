@@ -6,7 +6,7 @@ const buttonDecipher = document.querySelector('#decipher');
 const buttonCopy = document.querySelector('#copy');
 
 const KEY = {a: 'ai', e: 'enter', i: 'imes', o: 'ober', u: 'ufat',};
-const errorMsj = '<br><br><br><br><br><a href="https://shorturl.at/mvY09"><img src="imagenes/5203299.jpg" class="no-mensaje-img" width="250px" alt="Imagen de storyset en Freepik"></a><h3>Ningún mensaje fue encontrado</h3><p>Ingresa el texto que desees encriptar o desencriptar</p>'
+const errorMsj = '<br><br><br><br><br><img src="imagenes/muñeco.png" class="no-mensaje-img" width="250px"><h3>Ningún mensaje fue encontrado</h3><p>Ingresa el texto que desees encriptar o desencriptar</p>'
 
 cipher = text => {
     buttonCopy.style.visibility = text ? 'visible' : 'hidden';
