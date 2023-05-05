@@ -10,25 +10,25 @@ body {
     gap:20px 20px;
     grid-auto-flow: row;
     grid-template-areas:
-      "logo    result"
-      "text    result"
-      "buttons result";
+      "header  display"
+      "input   display"
+      "actions display";
     margin: 20px 20px;
   }
     
-.logo { 
-    grid-area: logo; 
+.header { 
+    grid-area: header; 
     padding-left: 20px;
 }
   
-.text { 
-    grid-area: text; 
+.text-input { 
+    grid-area: input; 
     height: 375px;
     padding: 1em 1em;
     text-align: center;
 }
 
-.input-text {
+.input {
     border: none;
     outline: none;
     overflow: auto;
@@ -39,20 +39,19 @@ body {
     height: 100%;
 }
   
-.buttons { 
-    grid-area: buttons; 
+.text-actions { 
+    grid-area: actions; 
     display: grid; 
     grid-template-columns: 1fr;
     grid-template-rows: 0.5fr 1.5fr;
-    gap:0px 0px;
     grid-template-areas:
       "restriction"
-      "actions";
+      "buttons";
+    text-align: center;
 }
 
 .restriction {
     grid-area: restriction;
-    text-align: center;
 }
 
 .restriction-text, .restriction-icon {
@@ -62,82 +61,67 @@ body {
 }
 
 .actions {
-    grid-area: actions;
-    text-align: center; 
+    grid-area: buttons;
     height: fit-content;
 }
 
-.button-encriptar {
-    margin: 1em 2em;
-    border-radius: 11px;
-    border: none;
-    background: #343434;
+.button-cipher, .button-decipher {
     width: 164px;
     height: 34px;
-    color: #f3f5fc;
-    cursor: pointer;
-}
-
-.button-encriptar:hover {
-    background: #FFC300;
-    color: #343434;
-    transform: scale(1.01);
-}
-
-.button-desencriptar {
-    margin: 1em 2em;
     border-radius: 11px;
     border: none;
-    background: #FFC300;
-    width: 164px;
-    height: 34px;
-    color: #343434;
+    outline: none;
     cursor: pointer;
+    margin: 1em 2em;
 }
 
-.button-desencriptar:hover {
-    background: #343434;
+.button-cipher, .button-decipher:hover {
     color: #f3f5fc;
-    transform: scale(1.01);
+    background: #343434;
 }
 
-.result { 
-    grid-area: result; 
+.button-decipher, .button-cipher:hover {
+    background: #FFC600;
+    color: #343434;
+}
+
+.text-display { 
+    grid-area: display; 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1.8fr 0.2fr;
     gap: 20px 0px;
     grid-template-areas: 
-      "parrafo"
+      "text"
       "copy";
-    text-align: center;
     background: white;
     border-radius: 20px;
     height: 555px;
+    text-align: center;
     padding: 20px;
+    box-shadow:  0px 2px 25px -10px rgba(0,0,0,0.3);
 }
 
-.display-text {
+.display {
     overflow: auto;
     height: 100%;
     resize: none;
     color: #343434;
 }
 
-.button-copiar {
+.copy {
+    background: #f3f5fc;
+    color: #343434;
     border-radius: 10px;
     border: none;
     outline: none;
-    background: #f3f5fc;
     width: 120px;
     height: 34px;
-    color: #343434;
     cursor: pointer;
     visibility: hidden;
 }
 
-.button-copiar:hover {
+.copy:hover {
     background: #343434;
     color: #f3f5fc;
-    transform: scale(1.01);
 }

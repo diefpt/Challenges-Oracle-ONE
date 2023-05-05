@@ -4,46 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Vina+Sans&family=Ysabeau:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Encriptador</title>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
+        <div class="header">
             <img src="imagenes/logo.png" width="50px">
         </div>
 
-        <div class="text">
-            <textarea name="mensaje" class="input-text" id="text" rows="20" cols="80" placeholder="Ingrese el texto aquí"></textarea>
+        <div class="text-input">
+            <textarea class="input" id="input" rows="20" cols="80" placeholder="Ingrese el texto aquí"></textarea>
         </div>
 
-        <div class="buttons">
+        <div class="text-display">           
+            <div class="display" id="display">
+                <br><br><br><br><br>
+                <a href="https://shorturl.at/mvY09">
+                    <img src="imagenes/5203299.jpg" class="no-message-img" width="250px" alt="Imagen de storyset en Freepik">
+                </a>
+                <h3>Ningún mensaje fue encontrado</h3>
+                <p>Ingresa el texto que desees encriptar o desencriptar</p> 
+            </div>
+
+            <div class="text-copy">
+                <button class="copy" id="copy">Copiar</button>
+            </div>
+
+        </div>
+
+        <div class="text-actions">
             <div class="restriction">
                 <img src="imagenes/path848.png" class="restriction-icon" width="10px">
                 <p class="restriction-text">Solo letras minúsculas y sin tildes</p>
             </div>
+
             <div class="actions">
-                <button name="encriptar" class="button-encriptar" id="encriptar">Encriptar</button>
-                <button name="desencriptar" class="button-desencriptar" id="desencriptar">Desencriptar</button>
+                <button class="button-cipher" id="cipher">Encriptar</button>
+                <button class="button-decipher" id="decipher">Desencriptar</button>
             </div>
         </div>
 
-        <div class="result">           
-            <div class="display-text" id="parrafo-display">
-                <br><br><br><br><br>
-                <a href="https://shorturl.at/mvY09">
-                    <img src="imagenes/5203299.jpg" class="no-mensaje-img" width="250px" alt="Imagen de storyset en Freepik">
-                </a>
-                <h3 class="no-mensaje">Ningún mensaje fue encontrado</h3>
-                <p class="parrafo-no">Ingresa el texto que desees encriptar o desencriptar</p> 
-            </div>
-
-            <div class="copy">
-                <button class="button-copiar" id="copiar">Copiar</button>
-            </div>
-        </div>
         <script src="scripts.js"></script>
+
       </div>
 </body>
 </html>
