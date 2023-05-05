@@ -1,5 +1,7 @@
 body {
-    background: #f3f5fc;
+    background-image: linear-gradient(to left bottom, #614385, #5c4c8b, #57548f, #535c93, #516395);
+    /* for darkmode
+    background-image: linear-gradient(to left top, #161515, #212020, #2c2b2b, #373737, #434343);*/
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -23,8 +25,7 @@ body {
   
 .text-input { 
     grid-area: input; 
-    height: 375px;
-    padding: 1em 1em;
+    height: 405px;
     text-align: center;
 }
 
@@ -35,8 +36,54 @@ body {
     background: transparent;
     resize: none;
     font-size: 1.5em;
-    width: 80%;
+    width: 85%;
+    height: 99%;
+    color: #ffffff81;
+}
+
+.input::placeholder {color: #f3f5fc}
+
+.text-display { 
+    grid-area: display; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.8fr 0.2fr;
+    gap: 20px 0px;
+    grid-template-areas: 
+      "text"
+      "copy";
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    height: 555px;
+    text-align: center;
+    padding: 20px;
+    margin-right: 40px;
+    box-shadow:  0px 10px 30px -10px rgba(0,0,0,0.6);
+}
+
+.display {
+    overflow: auto;
     height: 100%;
+    resize: none;
+    color: #343434;
+    padding: 0px 10px;
+}
+
+.copy {
+    background: #343434;
+    color: #f3f5fc;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 120px;
+    height: 34px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.copy:hover {
+    background: #636fa4;
+    color: #f3f5fc;
 }
   
 .text-actions { 
@@ -50,9 +97,7 @@ body {
     text-align: center;
 }
 
-.restriction {
-    grid-area: restriction;
-}
+.restriction {grid-area: restriction;}
 
 .restriction-text, .restriction-icon {
     display: inline-block;
@@ -78,50 +123,23 @@ body {
 .button-cipher, .button-decipher:hover {
     color: #f3f5fc;
     background: #343434;
+    box-shadow:  -6px 10px 20px -8px rgba(0,0,0,0.6);
 }
 
 .button-decipher, .button-cipher:hover {
     background: #FFC600;
     color: #343434;
+    box-shadow:  -6px 10px 20px -8px rgba(0,0,0,0.6);
 }
 
-.text-display { 
-    grid-area: display; 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.8fr 0.2fr;
-    gap: 20px 0px;
-    grid-template-areas: 
-      "text"
-      "copy";
-    background: white;
-    border-radius: 20px;
-    height: 555px;
-    text-align: center;
-    padding: 20px;
-    box-shadow:  0px 2px 25px -10px rgba(0,0,0,0.3);
+.display::-webkit-scrollbar, .input::-webkit-scrollbar {width: 8px;}
+
+.display::-webkit-scrollbar-thumb, .input::-webkit-scrollbar-thumb {
+    background: #ffffff91;
+    border-radius: 4px;
 }
 
-.display {
-    overflow: auto;
-    height: 100%;
-    resize: none;
-    color: #343434;
-}
-
-.copy {
-    background: #f3f5fc;
-    color: #343434;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    width: 120px;
-    height: 34px;
-    cursor: pointer;
-    visibility: hidden;
-}
-
-.copy:hover {
-    background: #343434;
-    color: #f3f5fc;
+.display::-webkit-scrollbar-track, .input::-webkit-scrollbar-track {
+    background: #e1e1e1a1;
+    border-radius: 4px;
 }
