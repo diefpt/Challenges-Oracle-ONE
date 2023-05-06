@@ -3,6 +3,8 @@ body {
     /* for darkmode
     background-image: linear-gradient(to left top, #161515, #212020, #2c2b2b, #373737, #434343);*/
     font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
 
 .container {  
@@ -17,16 +19,26 @@ body {
       "actions display";
     margin: 20px 20px;
   }
-    
-.header { 
-    grid-area: header; 
-    padding: 15px 0px 0px 30px;
-    opacity: 0.8;
+
+.header {
+    grid-area: header;
+    height: 53px;
 }
-  
+
+.header img {padding: 13px 80px;}
+
+.logo-back {
+    width: 180px;
+    background: #343434;
+    border-radius: 9px;
+    margin: 0px 40px 0px -30px;
+    box-shadow:  0px 10px 30px -10px rgba(0,0,0,0.6);
+} 
+ 
 .text-input { 
     grid-area: input; 
-    height: 405px;
+    height: 410px;
+    margin: 0px 40px 0px 20px;
     text-align: center;
 }
 
@@ -37,8 +49,9 @@ body {
     background: transparent;
     resize: none;
     font-size: 1.5em;
-    width: 85%;
-    height: 99%;
+    width: 90%;
+    height: 100%;
+    margin-top: 20px;
     color: #ffffff81;
 }
 
@@ -48,7 +61,7 @@ body {
     grid-area: display; 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.8fr 0.2fr;
+    grid-template-rows: 1.9fr 0.1fr;
     gap: 20px 0px;
     grid-template-areas: 
       "text"
@@ -57,29 +70,29 @@ body {
     border-radius: 20px;
     height: 555px;
     text-align: center;
-    padding: 20px;
-    margin-right: 40px;
+    padding: 20px 20px;
     box-shadow:  0px 10px 30px -10px rgba(0,0,0,0.6);
 }
 
 .display {
     overflow: auto;
+    padding: 100px 8px 0px 8px;
     height: 100%;
     resize: none;
     color: #343434;
-    padding: 0px 10px;
 }
 
 .copy {
     background: #343434;
     color: #f3f5fc90;
-    border-radius: 10px;
+    border-radius: 11px;
     border: none;
     outline: none;
-    width: 120px;
-    height: 34px;
+    width: 180px;
+    height: 40px;
     cursor: pointer;
     visibility: hidden;
+    box-shadow:  -6px 10px 20px -8px rgba(0,0,0,0.6);
 }
 
 .copy:hover {
@@ -112,28 +125,30 @@ body {
 }
 
 .button-cipher, .button-decipher {
-    width: 164px;
-    height: 34px;
+    width: 180px;
+    height: 40px;
     border-radius: 11px;
     border: none;
     outline: none;
     cursor: pointer;
-    margin: 1em 2em;
+    margin: 0.5em 2em;
+    box-shadow:  -6px 10px 20px -8px rgba(0,0,0,0.6);
 }
 
 .button-cipher, .button-decipher:hover {
     color: #F2ECFF90;
     background: #343434;
-    box-shadow:  -6px 10px 20px -8px rgba(0,0,0,0.6);
 }
 
 .button-decipher, .button-cipher:hover {
     background: #d8ad6c;
     color: #343434;
-    box-shadow:  -6px 10px 20px -8px rgba(0,0,0,0.6);
 }
 
-.display::-webkit-scrollbar, .input::-webkit-scrollbar {width: 8px;}
+.display::-webkit-scrollbar, .input::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
 
 .display::-webkit-scrollbar-thumb, .input::-webkit-scrollbar-thumb {
     background: #ffffff91;
@@ -143,4 +158,53 @@ body {
 .display::-webkit-scrollbar-track, .input::-webkit-scrollbar-track {
     background: #e1e1e1a1;
     border-radius: 4px;
+}
+
+@media  screen and (max-width: 850px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+        grid-auto-flow: row;
+        grid-template-areas: 
+          "header"
+          "input"
+          "actions"
+          "display";
+        margin: 20px 20px;
+    }
+
+    .header {
+        grid-area: header;
+        width: auto;
+        margin: 0px 0px;
+    }
+
+    .text-input {
+        grid-area: input;
+        width: auto;
+        height: auto;
+        resize: none;
+        margin: 0px 0px;
+    }
+
+    .input {height: 95%;}
+
+    .text-actions {
+        grid-area: actions;
+        width: auto;
+        height: fit-content;
+    }
+
+    .text-display {
+        grid-area: display;
+        width: auto;
+        height: fit-content;
+        max-height: 550px;
+    }
+
+    .display {padding: 0px 8px;}
+
+    .no-message-img {display: none;}
 }
