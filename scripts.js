@@ -14,7 +14,7 @@ const displayDiv = document.querySelector('.display');
 if(windowWidth <= 850) {
     img.remove();
 } else {
-    errorMsj = '<img src="imagenes/muñeco.png" class="no-mensaje-img" width="250px">' + errorMsj;
+    errorMsj = '<img src="imagenes/error404.png" class="no-mensaje-img" width="250px">' + errorMsj;
 }
 
 cipher = text => {
