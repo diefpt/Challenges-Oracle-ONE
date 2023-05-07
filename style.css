@@ -1,16 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-image: linear-gradient(to left bottom, #614385, #5c4c8b, #57548f, #535c93, #516395);
     /* for darkmode
     background-image: linear-gradient(to left top, #161515, #212020, #2c2b2b, #373737, #434343);*/
     font-family: 'Ubuntu', sans-serif;
-    margin: 0px;
-    padding: 0px;
+    height: 100%;
 }
 
 .container {  
     display: grid;
+    height: 100vb;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 0.3fr 2.2fr 0.5fr;
+    grid-template-rows: 0.3fr 2.4fr 0.47fr;
     gap:20px 20px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -22,54 +30,42 @@ body {
 
 .header {
     grid-area: header;
-    height: 53px;
+    height: 50px;
+    display: flex;
 }
-
-.header img {padding: 13px 80px;}
 
 .logo-back {
-    width: 180px;
+    position: relative;
+    width: fit-content;
+    border-radius: 10px;
+    margin-left: -30px;
+    padding: 12px 20px 12px 50px;
     background: #343434;
-    border-radius: 9px;
-    margin: 0px 40px 0px -30px;
-    box-shadow:  0px 10px 30px -10px rgba(0,0,0,0.6);
 } 
-/*    
-.header { 
-    grid-area: header; 
-    background: #343434;
-    border-radius: 9px;
-    margin: 0px 40px 0px 20px;
-    box-shadow:  0px 10px 30px -10px rgba(0,0,0,0.6);
-    height: 53px;
-}
-
-.header img {padding: 13px 0px 0px 50px;}*/
  
 .text-input { 
     grid-area: input; 
-    height: 410px;
+    display: flex;
+    height: 69.5vh;
     margin: 0px 40px 0px 20px;
-    text-align: center;
+    padding: 20px;
 }
 
 .input {
-    border: none;
-    outline: none;
-    overflow: auto;
-    background: transparent;
+    position: relative;
+    width: 100%;
     resize: none;
-    font-size: 1.5em;
-    width: 90%;
-    height: 100%;
-    margin-top: 20px;
-    color: #ffffff81;
+    overflow: auto;
+    font-size: 1.35em;
+    color: #ffffff88;
+    background: transparent;
 }
 
-.input::placeholder {color: #ffffff81}
+.input::placeholder {color: #ffffff88}
 
 .text-display { 
     grid-area: display; 
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1.9fr 0.1fr;
@@ -77,38 +73,34 @@ body {
     grid-template-areas: 
       "text"
       "copy";
-    background: rgba(255, 255, 255, 0.6);
     border-radius: 20px;
-    height: 555px;
     text-align: center;
+    margin-right: 40px;
     padding: 20px 20px;
-    box-shadow:  0px 10px 30px -10px rgba(0,0,0,0.6);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .display {
-    overflow: auto;
-    padding: 100px 8px 0px 8px;
     height: 100%;
     resize: none;
+    overflow: auto;
+    padding: 100px 8px 0px 8px;
     color: #343434;
 }
 
-.copy {
-    background: #343434;
-    color: #f3f5fc90;
-    border-radius: 11px;
-    border: none;
-    outline: none;
+.button-copy {
     width: 180px;
     height: 40px;
+    border-radius: 11px;
     cursor: pointer;
     visibility: hidden;
-    box-shadow:  -6px 10px 20px -8px rgba(0,0,0,0.6);
+    color: #f3f5fc90;
+    background: #343434;
 }
 
-.copy:hover {
-    background: #d8ad6c;
+.button-copy:hover {
     color: #343434;
+    background: #d8ad6c;
 }
   
 .text-actions { 
@@ -124,10 +116,10 @@ body {
 
 .restriction {grid-area: restriction;}
 
-.restriction-text, .restriction-icon {
+.restriction img, .restriction p {
     display: inline-block;
-    color: #343434;
     font-size: 0.7em;
+    color: #343434;
 }
 
 .actions {
@@ -139,11 +131,8 @@ body {
     width: 180px;
     height: 40px;
     border-radius: 11px;
-    border: none;
-    outline: none;
     cursor: pointer;
-    margin: 0.5em 2em;
-    box-shadow:  -6px 10px 20px -8px rgba(0,0,0,0.6);
+    margin: 0.5em 2em 0em 2em;
 }
 
 .button-cipher, .button-decipher:hover {
@@ -152,8 +141,12 @@ body {
 }
 
 .button-decipher, .button-cipher:hover {
-    background: #d8ad6c;
     color: #343434;
+    background: #d8ad6c;
+}
+
+.button-cipher, .button-decipher, .button-copy, .text-display, .logo-back {
+    box-shadow:  0px 10px 20px -8px rgba(0,0,0,0.8);
 }
 
 .display::-webkit-scrollbar, .input::-webkit-scrollbar {
@@ -173,9 +166,10 @@ body {
 
 @media  screen and (max-width: 850px) {
     .container {
+        height: 100vb;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: auto 35vh auto auto;
         gap: 20px;
         grid-auto-flow: row;
         grid-template-areas: 
@@ -188,34 +182,35 @@ body {
 
     .header {
         grid-area: header;
-        width: auto;
         margin: 0px 0px;
     }
 
     .text-input {
         grid-area: input;
-        width: auto;
-        height: auto;
-        resize: none;
-        margin: 0px 0px;
+        height: 100%;
+        padding: 0;
+        margin: 0;
     }
 
-    .input {height: 95%;}
+    .input {padding-right: 3px;}
 
     .text-actions {
         grid-area: actions;
-        width: auto;
         height: fit-content;
     }
 
     .text-display {
         grid-area: display;
-        width: auto;
         height: fit-content;
-        max-height: 550px;
+        max-height: 80vh;
+        margin: 0px 0px 20px 0px;
+        padding: 18px 0px;
     }
 
-    .display {padding: 0px 8px;}
+    .display {
+        padding: 0;
+        margin-right: 5px;
+    }
 
     .no-message-img {display: none;}
 }

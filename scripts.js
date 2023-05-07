@@ -1,9 +1,9 @@
-const textInput = document.querySelector('#input');
-const textDisplay = document.querySelector('#display');
+const textInput = document.querySelector('.input');
+const textDisplay = document.querySelector('.display');
 
-const buttonCipher = document.querySelector('#cipher');
-const buttonDecipher = document.querySelector('#decipher');
-const buttonCopy = document.querySelector('#copy');
+const buttonCipher = document.querySelector('.button-cipher');
+const buttonDecipher = document.querySelector('.button-decipher');
+const buttonCopy = document.querySelector('.button-copy');
 
 const KEY = {a: 'ai', e: 'enter', i: 'imes', o: 'ober', u: 'ufat',};
 let errorMsj = '<h3>Ningún mensaje fue encontrado</h3><p>Ingresa el texto que desees encriptar o desencriptar</p>';
@@ -21,6 +21,7 @@ cipher = text => {
     buttonCopy.style.visibility = text ? 'visible' : 'hidden';
     displayDiv.style.padding = text || windowWidth <= 850 ? '0px 8px' : '100px 8px 0px 8px';
     textDisplay.innerHTML = text ? text.replace(/[a-z]/gi, char => KEY.hasOwnProperty(char) ? KEY[char] : char) : errorMsj;
+    textInput.value = '';
 }
 
 decipher = text => {
@@ -31,6 +32,7 @@ decipher = text => {
                             .replaceAll('imes', 'i')
                             .replaceAll('ober', 'o')
                             .replaceAll('ufat', 'u') : errorMsj;
+    textInput.value = '';
 }
 
 buttonCipher.addEventListener('click', () => {cipher(textInput.value);});
